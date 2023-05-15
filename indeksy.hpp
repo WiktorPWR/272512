@@ -2,23 +2,42 @@
 #include <string>
 #include <iostream>
 using namespace std;
-class Student {
+class Osoba {
     public:
         string imie;
         string nazwisko;
+        string pesel;
+        virtual void set_person(){
+            cout<<"Podaj imie";
+            cin >> imie;
+            cout<<"Podaj nazwisko";
+            cin >> nazwisko;
+            cout<<"Podaj pesel";
+            cin >> pesel;
+        }
+
+};
+class Student:public Osoba{
+    private:
         int indeks;
-        long long int pesel;
-        Student(string im,string n,int in,double p){
-            im = imie;
-            n = nazwisko;
-            in = indeks;
-            p = pesel;
+    public:
+        void set_student(){
+            set_person();
+            cout<<"Podaj indeks";
+            cin >> indeks;
+        }
+
+};
+class Pracownik:public Osoba{
+    private:
+        string stanowisko;
+        int numer_karty_pracownika;
+    public:
+        void set_pracownik(){
+            set_person();
+            cout<<"Podaj stanowisko";
+            cin >> stanowisko;
+            cout <<"Podaj numer karty pracownika";
+            cin >> numer_karty_pracownika;
         }
 };
-vector<Student>v;
-void wsadzanie(string imie,string nazwisko,int indeks,double pesel){
-    Student Student(imie,nazwisko,indeks,pesel);
-    v.push_back(Student);
-}
-
-

@@ -2,47 +2,30 @@
 #include <vector>
 #include <string>
 #include "indeksy.hpp"
-#include "interfejs.hpp"
 using namespace std;
+vector<Osoba>ludzie;
 int main(){
+    cout<<"Kim sie chcesz zajac?"<<endl;
+    cout<<"0.Wyjscie"<<endl<<"1.Student"<<endl<<"2.Pracownik"<<endl;
+    Osoba* ballz = nullptr;
+    int osoba;
+    cin >> osoba;
     while(true){
-        
-        int opcja;
-        cin >> opcja;
-        
-        int akcja;
-        cin >> akcja;
-        switch(akcja){
+            switch(osoba){
             case 0:
-            {
                 return 0;
-            }
             case 1:
-            {
-                if(opcja == 1){
-                    
-                }
-                if(opcja == 2){
-                    string imie,nazwisko,stanowisko;
-                    double pesel;
-                    int NumerKartyPracownika;
-
-                }
+                ballz = new Student();
                 break;
-            }
             case 2:
-            cout<<"Podaj dane studenta";
-            int numer;
-            cin >> numer;
-            v.at(numer);
-            break;
-            case 3:
-            {
-                cout << "Lala";
+                ballz = new Pracownik();
                 break;
-            }
+            default:
+                continue;
         }
+        ballz->set_person();
     }
-    return 0;
-    
 }
+    
+    
+    
